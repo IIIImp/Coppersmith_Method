@@ -38,8 +38,19 @@ def equation_generate(* monomials_collection):
     return equations
 
 
+# type1: Output a prime N
+# type2: Output a N=pq
+def modular_number_generate(generate_type = 1, *parameter_range):
+    if generate_type == 1:
+        N = random_prime(parameter_range[0])
+    if generate_type == 2:
+        N = random_prime(parameter_range[0]) * random_prime(parameter_range[1])
+    return N
+
 
 # print(index_set_generate((1, 2), (2, 4), (3, 4)))
 # print(variable_generate(5,59))
 # print(monomials_generate((25,1,4,2,6),variable_generate(5,59)))
 # print(equation_generate(monomials_generate((25,1,4,2,6),variable_generate(5,59)),monomials_generate((25,1,4,3,6),variable_generate(5,59))))
+# print(modular_number_generate(1,2 ** 128))
+# print(modular_number_generate(2,2 ** 128, 2 ** 16))
